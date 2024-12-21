@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UpdateBook</title>
+</head>
+<body>
+<form method="POST">
+  {% csrf_token %}
+    <div class="container">
+        <h1>Update Book</h1>
+        <form id="bookForm">
+            <label for="title">BookName:</label>
+            <input type="text" id="title" name="bname" required value="{{data.book_name}}">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="bauthor" required value="{{data.book_author}}">
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="bprice" required value="{{data.book_price}}">
+             <label for="image">Book Image:</label>
+            <input type="file" id="image" name="bimage" accept="image/*" required value="{{data.book_image}}">
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="8" value="{{data.book_details}}"></textarea>
+
+            <button type="submit">Update Book</button>
+        </form>
+    </div>
+
+</form>
+
+</body>
+</html>
